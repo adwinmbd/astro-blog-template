@@ -1,0 +1,29 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  permalink?: string;
+}
+
+const { title, description, permalink } = Astro.props
+---
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{title} | Astrohalfa</title>
+<meta name="description" content={description}>
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<!-- <link href="//fonts.googleapis.com/css?family=Source+Code+Pro:400,700|Source+Sans+Pro:600,900|Crimson+Text:700italic,600,600italic,400,700,400italic" rel="stylesheet" type="text/css"/> -->
+<!-- <link rel="stylesheet" href="/style/reset.css">
+<link rel="stylesheet" href="/style/pygment.css"> -->
+<link rel="stylesheet" href="/global.css">
+
+<!-- Lozad.js - lazy loading and progressive enhancement -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const observer = lozad('.lazy', {}); // lazy loads elements with default selector as '.lozad'
+  observer.observe(); 
+})
+</script>
+<!-- / Lozad.js -->

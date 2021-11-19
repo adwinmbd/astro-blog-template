@@ -1,0 +1,24 @@
+---
+import { Markdown } from 'astro/components';
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+import MainHead from '../components/MainHead.astro'
+
+const { title, description, head } = Astro.props;
+---
+<html lang="en">
+  <head>
+    {head}
+    <MainHead title={title} description={description} />
+  </head>
+  <body>
+    <!-- <main>
+      <slot />
+    </main> -->
+  <div class="wrap">
+      <Header/>
+      <slot />
+      <Footer />
+  </div>
+  </body>
+</html>

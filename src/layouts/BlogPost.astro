@@ -1,0 +1,23 @@
+---
+import { Markdown } from 'astro/components';
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+import MainHead from '../components/MainHead.astro'
+
+const { content } = Astro.props;
+// const { title, description, publishDate, heroImage } = content;
+const { title, description, publishDate } = content;
+// {heroImage && <img src={heroImage || ''} alt={`decorative image for ${title}`}> }
+---
+<html lang="en">
+  <head>
+    <MainHead title={title} description={description} />
+  </head>
+  <body>
+  <div class="wrap">
+      <Header/>
+      <slot />
+      <Footer />
+  </div>
+  </body>
+</html>

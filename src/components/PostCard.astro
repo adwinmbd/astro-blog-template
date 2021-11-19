@@ -1,0 +1,26 @@
+---
+const { post } = Astro.props;
+
+function formatDate(date) {
+  return new Date(date).toUTCString().replace(/(\d\d\d\d) .*/, '$1'); // remove everything after YYYY
+}
+---
+
+<article>
+    <!-- <span class="meta">{post.date}</span> -->
+    <time class="meta" datetime={post.date}>{formatDate(post.date)}</time>
+    <a href={`/posts/${post.slug}`}>
+        <h2>{post.title}</h2>
+    </a>
+    <p>
+        {post.description}&nbsp;<a class="read-more" href={`/posts/${post.slug}`}>Read →</a>
+    </p>
+</article>
+
+<!-- 
+<style lang="scss">
+  article{
+    margin: 0px 0px 1em 0px;
+  }
+</style>
+-->

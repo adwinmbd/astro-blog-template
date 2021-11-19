@@ -1,0 +1,38 @@
+---
+import BlogPost from '../../layouts/BlogPost.astro';
+
+export async function getStaticPaths({rss}) {
+  let allPosts = Astro.fetchContent('../../posts/*.md');
+  let allSortedPosts = allPosts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
+  rss({
+    // The RSS Feed title, description, and custom metadata.
+    title: 'Simple Astro Blog',
+    description: 'A blog starter template built with astro',
+    customData: `<language>en-us</language>`,
+    // The list of items for your RSS feed, sorted.
+    items: allSortedPosts.map(post => ({
+      title: post.title,
+      description: post.astro.html,
+      link: `/posts/${post.slug}`,
+      creator: 'Random Author',
+      pubDate: post.date,
+    })),
+    dest: "/feed/posts.xml",
+  });
+
+  return allSortedPosts.map((post) => {
+    return {
+      params: {slug: post.slug},
+      props: {...post}
+    }
+  })
+}
+
+const { slug } = Astro.request.params;
+const content = Astro.props;
+---
+
+<BlogPost content={content}>
+  {content.astro.html}
+</BlogPost>

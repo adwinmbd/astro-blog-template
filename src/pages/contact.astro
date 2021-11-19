@@ -11,10 +11,10 @@ import MainLayout from '../layouts/MainLayout.astro'
             Yes, this contact form actually works. If you really want to test it, please write something in it. I do receive these submissions ;-)
         </p>
 
-        <form action="//formspree.io/contact@stijn.vc" method="POST">
+        <form action="https://formspree.io/contact@example.com" method="POST">
             <input type="email" name="_replyto" placeholder="Your email"/>
             <input type="hidden" name="_next" value="/holo-alfa/thanks"/>
-            <input type="hidden" name="_subject" value="New submission from http://steinvc.github.io/holo-alfa"/>
+            <input type="hidden" name="_subject" value="New submission from https://www.example.com/"/>
             <input type="text" name="_gotcha" style="display: none"/>
             <textarea type="text" name="content" rows="8" placeholder="Your message"></textarea>
             <input type="submit" value="Send"/>

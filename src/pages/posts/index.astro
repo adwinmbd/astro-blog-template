@@ -1,17 +1,14 @@
 ---
 // Layout Import
-import MainLayout from '../../layouts/MainLayout.astro'
+import MainLayout from '../../layouts/MainLayout.astro';
 // Component Imports
 import PostList from '../../components/PostList.astro'
 
-// Data Fetching: fetch recent posts
-let allPosts = Astro.fetchContent('../posts/*.md');
-allPosts = allPosts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-const recentPosts = allPosts.slice(0, 3)
+// Data Fetching: List all Markdown posts in the repo.
+const allPosts = Astro.fetchContent('../../posts/*.md');
+const sortedPosts = allPosts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 ---
-<MainLayout 
-  title="Home" 
-  description={`Hey! This is a basic Astro blog.`}>
-    <PostList posts={recentPosts} />
-    <a href="/posts/">read more posts...</a>
+<MainLayout title="Posts" description="This a big ol' list of my blog posts- I blog about web dev, dev-ops, my life, and a bunch of other stuff.">
+  <PostList posts={sortedPosts} />
+  <p><i>page 1 of 1 (I don't have pagination yet 🤷🏻‍♂️)</i></p>
 </MainLayout>

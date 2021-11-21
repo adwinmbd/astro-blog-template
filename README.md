@@ -62,6 +62,7 @@ Feel free to check [Astro.js Documentation](https://docs.astro.build/) or jump i
 ## To-Do
 
 - [x] Fix title
-- [ ] Fix posts link
+- [x] Fix posts link
 - [ ] Add image
+- [ ] Add pagination
 - [ ] Add code styling

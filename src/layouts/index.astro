@@ -1,0 +1,35 @@
+---
+// Layout Import
+import MainLayout from '../../layouts/MainLayout.astro';
+// Component Imports
+import PostList from '../../components/PostList.astro'
+import Paginator from '../../components/Paginator.astro'
+import Pagination from '../../components/Pagination.astro'
+
+// Data Fetching: List all Markdown posts in the repo.
+const pageSize = 3
+const allPosts = Astro.fetchContent('../../posts/*.md');
+const sortedPosts = allPosts.sort((a, b) => new Date(b.date).valueOf() - new Date(a.date).valueOf());
+let firstPage = allPosts.slice(0, 2);
+
+/*
+export async function getStaticPaths({ paginate}) {
+
+    return paginate(sortedPosts, {
+      pageSize: pageSize
+    })
+}
+const { page } = Astro.props
+//  <PostList posts={sortedPosts} />
+// <Paginator page={page} />
+*/
+---
+<MainLayout title="Posts" description="This a big ol' list of my blog posts- I blog about web dev, dev-ops, my life, and a bunch of other stuff.">
+
+<PostList posts={sortedPosts} />
+<Pagination prevUrl="/posts" nextUrl="/posts/2" />
+  <!-- <p><i>page 1 of 1 (I don't have pagination yet 🤷🏻‍♂️)</i></p> -->
+
+</MainLayout>
+
+

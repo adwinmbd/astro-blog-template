@@ -1,0 +1,36 @@
+---
+// Layout Import
+import MainLayout from '../../layouts/MainLayout.astro'
+// Component Imports
+import PostList from '../../components/PostList.astro'
+import Paginator from '../../../components/Paginator.astro'
+
+export async function getStaticPaths({ paginate }) {
+  const pageSize = 3;
+  const allPosts = Astro.fetchContent('../posts/*.md');
+  const allTags = new Set()
+  allPosts.map(post => {
+      post.tags && post.tags.map(tag => allTags.add(tag.toLowerCase()))
+  })
+
+  return Array.from(allTags).map((tag) => {
+    const filteredPosts = allPosts.filter((post) => post.tags.includes(tag))
+    return {
+      params: { tag },
+      pageSize: pageSize
+    };
+  });
+}
+
+const { page } = Astro.props
+const { tag } = Astro.request.params
+let title = `Posts by Tag: ${tag}`
+let description = `all of the articles we've posted and linked so far under the tag: "${tag}"`
+
+---
+<MainLayout 
+  title={title} description={description}>
+    <PostList posts={page} />
+    <!-- <PostList posts={pages.data} /> -->
+    <Paginator page={page} />
+</MainLayout>

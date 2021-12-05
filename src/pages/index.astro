@@ -7,11 +7,31 @@ import PostList from '../components/PostList.astro'
 // Data Fetching: fetch recent posts
 let allPosts = Astro.fetchContent('../posts/*.md');
 allPosts = allPosts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-const recentPosts = allPosts.slice(0, 3)
+let recentPosts = allPosts.slice(0, 3)
 ---
 <MainLayout 
   title="Home" 
   description={`Hey! This Astro Halfa a simple Astro blog template.`}>
     <PostList posts={recentPosts} />
-    <a href="/posts/">read more posts...</a>
+    <!-- {recentPosts.map((post) => <PostList post={post} />)} -->
+    <p class="page-actions">
+      <a class="read-more" href="/posts" title="All Posts">All Posts &#8594;</a>
+    </p>
 </MainLayout>
+
+<style>
+    .action-go-to {
+      font-size: 1rem;
+      line-height: 1.5rem;
+      text-transform: uppercase;
+      --tw-text-opacity: 1;
+      color: rgba(113,113,122,var(--tw-text-opacity));
+    }
+    .page-actions {
+        display: flex;
+        justify-content: center;
+        gap: 0.5rem;
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+    }
+</style>

@@ -52,17 +52,20 @@ All commands are run from the root of the project, from a terminal:
 
 ## 👀 Want to learn more?
 
-Feel free to check [Astro.js Documentation](https://docs.astro.build/) or jump into the [Discord server](https://astro.build/chat).
+Feel free to check [Astro Documentation](https://docs.astro.build/) or jump into the [Astro Discord server](https://astro.build/chat).
 
-## References
+## Credits
 
 - [Stijn Cujik](https://github.com/stijnvc/holo-alfa)
 - [Mykal Machon](https://github.com/MykalMachon/Mykal.Codes)
 
 ## To-Do
 
-- [x] Fix title
-- [x] Fix posts link
+- [x] Add tags
 - [ ] Add image
 - [ ] Add pagination
 - [ ] Add code styling
+- [x] Fix title
+- [x] Fix posts link
+- [ ] Fix tags not finding page
+- [ ] Fix pagination not finding page

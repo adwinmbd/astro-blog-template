@@ -6,9 +6,11 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
+    "clean": "rimraf dist",
     "preview": "astro preview"
   },
   "devDependencies": {
-    "astro": "^0.20.12"
+    "astro": "^0.21.12",
+    "rimraf": "^3.0.2"
   }
 }

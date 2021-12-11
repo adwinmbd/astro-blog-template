@@ -1,17 +1,18 @@
 # Welcome to Astrohalfa
 
-A simple blog template built using [Astro](https://astro.build)
+A simple blog built using [Astro](https://astro.build)
 
 ![screenshot](screenshot.png)
 
 ## 🚀 Project Structure
 
-Inside the Astro project, you'll see the following folders and files:
+Inside of your Astro project, you'll see the following folders and files:
 
 ```
 /
 ├── public/
-│   ├── robots.txt
+│   ├── code.png
+│   └── robots.css
 │   └── global.css
 │   └── favicon.ico
 ├── src/
@@ -21,6 +22,9 @@ Inside the Astro project, you'll see the following folders and files:
 │   │   └── MainHead.astro
 │   │   └── PostCard.astro
 │   │   └── PostList.astro
+│   │   └── Pagination.astro
+│   └── layouts/
+│       └── MainLayout.astro
 │   └── pages/
 │       └── contact.astro
 │       └── index.astro
@@ -52,20 +56,14 @@ All commands are run from the root of the project, from a terminal:
 
 ## 👀 Want to learn more?
 
-Feel free to check [Astro Documentation](https://docs.astro.build/) or jump into the [Astro Discord server](https://astro.build/chat).
-
-## Credits
-
-- [Stijn Cujik](https://github.com/stijnvc/holo-alfa)
-- [Mykal Machon](https://github.com/MykalMachon/Mykal.Codes)
+Feel free to check [our documentation](https://github.com/snowpackjs/astro) or jump into our [Discord server](https://astro.build/chat).
 
 ## To-Do
 
-- [x] Add tags
-- [ ] Add image
-- [ ] Add pagination
+- [ ] Add tags
+- [x] Fix index page
+- [x] Fix post page
+- [ ] Add post title
 - [ ] Add code styling
-- [x] Fix title
-- [x] Fix posts link
-- [ ] Fix tags not finding page
-- [ ] Fix pagination not finding page
+- [ ] Fix navigation links
+- [ ] Change pagination styling

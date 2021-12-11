@@ -1,8 +1,8 @@
 ---
-import BlogPost from '../../layouts/BlogPost.astro';
+import BlogPost from '../../../layouts/BlogPost.astro';
 
-export async function getStaticPaths() {
-  let allPosts = Astro.fetchContent('../../posts/*.md');
+export async function getStaticPaths({rss}) {
+  let allPosts = Astro.fetchContent('../../../posts/*.md');
   let allSortedPosts = allPosts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
   return allSortedPosts.map((post) => {

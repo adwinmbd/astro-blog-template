@@ -1,19 +1,107 @@
 ---
 // Layout Import
 import MainLayout from '../layouts/MainLayout.astro'
+// Component Imports
+// import PostList from '../components/PostList.astro'
+
+// Data Fetching: fetch recent posts
+/*
+let allPosts = Astro.fetchContent('../posts/*.md');
+allPosts = allPosts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+const recentPosts = allPosts.slice(0, 3)
+*/
 ---
-<MainLayout 
-  title="About" 
-  description={`About information on Astrohalfa Simple Blog.`}>
-    <article>
-        <h1>About</h1>
-        <p>Astrohalfa is a minimalist, mobile first <a href="https://docs.astro.build">Astro.js</a> theme with focus on readability and content. Get the latest version at the
-            <a href="https://github.com/">Github repository</a>.</p>
-
-        <hr/>
-
-        <p>Astrohalfa is open source,
-            <a href="https://opensource.org/licenses/MIT">MIT license</a>.
-        </p>
-    </article>
+<MainLayout title="About" description={`Hey! This is the About page.`}>
+        <h1 class="font-size-3 title-spacing">About</h1>
+        <section>
+            <h2 class="font-size-2">Short bio</h2>
+            <div class="bio">
+                <p>Although he graduated with a degree in film studies, Nikin’s interest in technology and design led
+                    him to a career in UX design. From Freshbooks to Say Yeah!, Nikin helped craft interfaces and
+                    front-end code that balanced business and user objectives.</p>
+                <p>Having spent all his life in Canada, Nikin moved to London, United Kingdom in spring 2019 where he’s
+                    now focused on supporting the Government Digital Service as an interaction designer.</p>
+                <p>Aside from his day-to-day work, Nikin is an avid photographer, aiming to capture the everyday as
+                    cinematic.</p>
+            </div>
+        </section>
+        <section>
+            <h2 class="font-size-2">Work</h2>
+            <ul class="list-extra-spaced">
+                <li>
+                    <h3 class="font-size-1">Government Digital Service</h3>
+                    <div class="meta-information">
+                        <p><span class="visually-hidden">Based in</span> <span class="capitalize">London, United
+                                Kingdom</span></p>
+                        <p><span class="visually-hidden">From</span> <time datetime="2020-08" class="capitalize">August
+                                2020</time></p>
+                    </div>
+                </li>
+                <li>
+                    <h3 class="font-size-1">A Million Ads</h3>
+                    <div class="meta-information">
+                        <p><span class="visually-hidden">Based in</span> <span class="capitalize">London, United
+                                Kingdom</span></p>
+                        <p><span class="visually-hidden">From</span> <time datetime="2019-06" class="capitalize">June
+                                2019</time> <span class="visually-hidden">to</span> <time datetime="2020-08"
+                                class="dash capitalize">August 2020</time></p>
+                    </div>
+                </li>
+                <li>
+                    <h3 class="font-size-1">Say Yeah!</h3>
+                    <div class="meta-information">
+                        <p><span class="visually-hidden">Based in</span> <span class="capitalize">Toronto, Canada</span>
+                        </p>
+                        <p><span class="visually-hidden">From</span> <time datetime="2019-08" class="capitalize">August
+                                2019</time> <span class="visually-hidden">to</span> <time datetime="2019-11"
+                                class="dash capitalize">November 2019</time></p>
+                    </div>
+                </li>
+                <li>
+                    <h3 class="font-size-1">Freshbooks</h3>
+                    <div class="meta-information">
+                        <p><span class="visually-hidden">Based in</span> <span class="capitalize">Toronto, Canada</span>
+                        </p>
+                        <p><span class="visually-hidden">From</span> <time datetime="2015-05" class="capitalize">May
+                                2015</time> <span class="visually-hidden">to</span> <time datetime="2018-03"
+                                class="dash capitalize">March 2018</time></p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+        <section>
+            <h2 class="font-size-2">Education</h2>
+            <ul class="list-extra-spaced">
+                <li>
+                    <h3 class="font-size-1">Juno College of Technology</h3>
+                    <div class="meta-information">
+                        <p><span class="visually-hidden">Based in</span> <span class="capitalize">Toronto, Canada</span>
+                        </p>
+                        <p><span class="visually-hidden">From</span> <time datetime="2014-09"
+                                class="capitalize">September 2014</time> <span class="visually-hidden">to</span> <time
+                                datetime="2014-11" class="dash capitalize">November 2014</time></p>
+                    </div>
+                </li>
+                <li>
+                    <h3 class="font-size-1">OCAD University</h3>
+                    <div class="meta-information">
+                        <p><span class="visually-hidden">Based in</span> <span class="capitalize">Toronto, Canada</span>
+                        </p>
+                        <p><span class="visually-hidden">From</span> <time datetime="2011-09"
+                                class="capitalize">September 2011</time> <span class="visually-hidden">to</span> <time
+                                datetime="2013-06" class="dash capitalize">June 2013</time></p>
+                    </div>
+                </li>
+                <li>
+                    <h3 class="font-size-1">Carleton University</h3>
+                    <div class="meta-information">
+                        <p><span class="visually-hidden">Based in</span> <span class="capitalize">Ottawa, Canada</span>
+                        </p>
+                        <p><span class="visually-hidden">From</span> <time datetime="2003-09"
+                                class="capitalize">September 2003</time> <span class="visually-hidden">to</span> <time
+                                datetime="2007-04" class="dash capitalize">April 2007</time></p>
+                    </div>
+                </li>
+            </ul>
+        </section>
 </MainLayout>

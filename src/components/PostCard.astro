@@ -7,11 +7,36 @@ function formatDate(date) {
 ---
 
 <article>
-    <time class="meta" datetime={post.date}>{formatDate(post.date)}</time>
-    <a href={`/posts/${post.slug}`}>
+    <!-- <a class="font-size-1" href={`/posts/${post.slug}`}>
         <h2>{post.title}</h2>
-    </a>
-    <p>
-        {post.description}&nbsp;<a class="read-more" href={`/posts/${post.slug}`}>Read →</a>
-    </p>
+    </a> -->
+    <h3 class="font-size-1">
+      <a href={`/blog/${post.slug}`}>{post.title}</a>
+    </h3>
+    <div class="meta-information">
+        <p>
+            <!-- {post.description}&nbsp;<a class="read-more" href={`/posts/${post.slug}`}>Read →</a> -->
+            {post.description}
+        </p>
+        <p>
+          <span>Published in</span> 
+          <time class="capitalize" datetime={post.date}>{formatDate(post.date)}</time>
+        <!-- <div class="tags">
+            <span>Article topics:</span>
+            <ul class="list-horizontal">
+                <li class="capitalize">web design</li>
+                <li class="capitalize">design</li>
+                <li class="capitalize">information architecture</li>
+            </ul>
+        </div> -->
+        </p>
+    </div>
 </article>
+
+<!-- 
+<style lang="scss">
+  article{
+    margin: 0px 0px 1em 0px;
+  }
+</style>
+-->

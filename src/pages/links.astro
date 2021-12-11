@@ -1,0 +1,38 @@
+---
+// Layout Import
+import MainLayout from '../layouts/MainLayout.astro'
+// Component Imports
+// import PostList from '../components/PostList.astro'
+
+// Data Fetching: fetch recent posts
+/*
+let allPosts = Astro.fetchContent('../posts/*.md');
+allPosts = allPosts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+const recentPosts = allPosts.slice(0, 3)
+*/
+---
+<MainLayout title="Links" description={`Hey! This is the Links page.`}>
+    <!-- <PostList posts={recentPosts} />
+    <a href="/posts/">read more posts...</a> -->
+    <h1 class="font-size-3 title-spacing">Links</h1>
+    <section>
+        <h2 class="font-size-2">Online publications</h2>
+        <ul>
+            <li><a href="https://insidegovuk.blog.gov.uk/2021/10/29/how-we-made-the-gov-uk-accordion-component-more-accessible/"
+                    rel="external">How we made the GOV.UK accordion component more accessible</a></li>
+            <li><a href="https://designnotes.blog.gov.uk/2021/02/15/starting-as-a-designer-in-government-when-youre-working-from-home/"
+                    rel="external">Starting as a designer in government when you’re working from home</a></li>
+        </ul>
+    </section>
+    <section>
+        <h2 class="font-size-2">Social</h2>
+        <ul>
+            <li><a href="https://nkngwd.medium.com/" rel="external">Medium</a></li>
+            <li><a href="https://github.com/nnagewad" rel="external">Github</a></li>
+            <li><a href="https://www.linkedin.com/in/nikinnagewadia/" rel="external">Linkedin</a></li>
+            <li><a href="https://dribbble.com/nnagewad/" rel="external">Dribbble</a></li>
+            <li><a href="https://twitter.com/nikin_n" rel="external">Twitter</a></li>
+            <li><a href="https://www.instagram.com/nkngwd/" rel="external">Instagram</a></li>
+        </ul>
+    </section>
+</MainLayout>

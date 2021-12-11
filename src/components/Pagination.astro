@@ -1,40 +1,31 @@
 ---
+/*
 export interface Props {
-  prevUrl: string;
-  nextUrl: string;
-}
 
-const { prevUrl, nextUrl } = Astro.props;
+    url: {
+        prev: number,
+        next: number
+    };
+
+}
+*/
+const { page } = Astro.props;
 ---
-
-<style lang="scss">
-.nav {
-  display: flex;
-  margin-right: auto;
-  margin-left: auto;
-  padding-top: 4rem;
-  padding-bottom: 4rem;
-}
-.prev,
-.next {
-  display: block;
-  text-transform: uppercase;
-  font-size: 0.8em;
-  &[href="#"] {
-    display: none;
-  }
-}
-.prev {
-  margin-right: auto;
-}
-.next {
-  margin-left: auto;
-}
-</style>
-
-<div class="wrapper">
-  <nav class="nav">
-    <a class="prev" href={prevUrl || '#'} aria-label="Previous Page">Prev</a>
-    <a class="next" href={nextUrl || '#'} aria-label="Next Page">Next</a>
-  </nav>
+<div class="page-actions">
+    {page.url.prev && <a class="action-gotox" href={page.url.prev} title="Go to Previous">&larr; Prev</a>}
+    {page.url.next && <a class="action-gotox" href={page.url.next} title="Go to Next">Next &rarr;</a>}
 </div>
+<style>
+    .page-actions {
+        display: flex;
+        justify-content: center;
+        gap: 0.5rem;
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+    }
+    .action-gotox {
+        font-size: 1rem;
+        line-height: 1.5rem;
+        text-transform: uppercase;
+    }
+</style>

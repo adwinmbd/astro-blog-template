@@ -1,8 +1,8 @@
-# Welcome to Astrohalfa
+# Welcome to Astromnl Blog Template
 
 A simple blog built using [Astro](https://astro.build)
 
-![screenshot](screenshot.png)
+![screenshot](astromnl.png)
 
 ## 🚀 Project Structure
 
@@ -16,6 +16,8 @@ Inside of your Astro project, you'll see the following folders and files:
 │   └── global.css
 │   └── favicon.ico
 ├── src/
+│   ├── posts/
+│   │    └── *.md
 │   ├── components/
 │   │   └── Footer.astro
 │   │   └── Header.astro
@@ -23,17 +25,18 @@ Inside of your Astro project, you'll see the following folders and files:
 │   │   └── PostCard.astro
 │   │   └── PostList.astro
 │   │   └── Pagination.astro
-│   └── layouts/
-│       └── MainLayout.astro
-│   └── pages/
-│       └── contact.astro
-│       └── index.astro
+│   ├── layouts/
+│   │    └── BlogPost.astro
+│   │    └── MainLayout.astro
+│   ├── pages/
 │       └── about.astro
-│       ├── posts/
-|           └── [slug].astro
-|           └── index.astro
-│   └── posts/
-│       └── *.md
+│       └── index.astro
+│       └── contact.astro
+│       ├── blog/
+|           └── [all]/
+|               └── [...page].astro
+|           └── [slug]/
+|               └── index.astro
 └── package.json
 ```
 
@@ -56,7 +59,7 @@ All commands are run from the root of the project, from a terminal:
 
 ## 👀 Want to learn more?
 
-Feel free to check [our documentation](https://github.com/snowpackjs/astro) or jump into our [Discord server](https://astro.build/chat).
+Feel free to check [Astro documentation](https://github.com/snowpackjs/astro) or jump into our [Astro Discord server](https://astro.build/chat).
 
 ## To-Do
 
@@ -65,5 +68,12 @@ Feel free to check [our documentation](https://github.com/snowpackjs/astro) or j
 - [x] Fix post page
 - [ ] Add post title
 - [ ] Add code styling
+- [ ] Add contact page
 - [ ] Fix navigation links
 - [ ] Change pagination styling
+
+## Credits
+
+- [Mykal Machon](https://github.com/MykalMachon/Mykal.Codes)
+- [Chris Bongers](https://github.com/rebelchris/astro-recipe-website)
+- [Nikin Nagewadia](https://github.com/nnagewad/static-personal-site)

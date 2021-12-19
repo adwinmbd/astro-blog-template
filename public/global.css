@@ -489,7 +489,7 @@ section {
   color: var(--color-button-text);
 }
 
-/************** Pagination **********************/
+/************** justice.gov.uk design system **********************/
 @media (min-width: 48.0625em) {
   .moj-pagination {
     margin-left: -5px;
@@ -653,6 +653,7 @@ section {
   padding: 5px;
 }
 
+/***************** Gov.uk Design Sytem ********************/
 .govuk-visually-hidden {
   position: absolute !important;
   width: 1px !important;
@@ -665,4 +666,93 @@ section {
   clip-path: inset(50%) !important;
   border: 0 !important;
   white-space: nowrap !important;
+}
+
+.govuk-tag {
+  display: inline-block;
+  outline: 2px solid rgba(0, 0, 0, 0);
+  outline-offset: -2px;
+  color: #fff;
+  background-color: #1d70b8;
+  letter-spacing: 1px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: GDS Transport, arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 700;
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 1;
+  padding: 5px 8px 4px;
+}
+
+@media print {
+  .govuk-tag {
+    font-family: sans-serif;
+  }
+}
+
+@media (min-width: 40.0625em) {
+  .govuk-tag {
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1;
+  }
+}
+
+@media print {
+  .govuk-tag {
+    font-size: 14pt;
+    line-height: 1;
+  }
+}
+
+.govuk-tag--inactive {
+  background-color: #505a5f;
+}
+
+.govuk-tag--grey {
+  color: #383f43;
+  background: #eeefef;
+}
+
+.govuk-tag--purple {
+  color: #3d2375;
+  background: #dbd5e9;
+}
+
+.govuk-tag--turquoise {
+  color: #10403c;
+  background: #bfe3e0;
+}
+
+.govuk-tag--blue {
+  color: #144e81;
+  background: #d2e2f1;
+}
+
+.govuk-tag--yellow {
+  color: #594d00;
+  background: #fff7bf;
+}
+
+.govuk-tag--orange {
+  color: #6e3619;
+  background: #fcd6c3;
+}
+
+.govuk-tag--red {
+  color: #942514;
+  background: #f6d7d2;
+}
+
+.govuk-tag--pink {
+  color: #80224d;
+  background: #f7d7e6;
+}
+
+.govuk-tag--green {
+  color: #005a30;
+  background: #cce2d8;
 }

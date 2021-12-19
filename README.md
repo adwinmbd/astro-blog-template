@@ -63,17 +63,21 @@ Feel free to check [Astro documentation](https://github.com/snowpackjs/astro) or
 
 ## To-Do
 
-- [ ] Add tags
+- [x] Add tags
 - [x] Fix index page
 - [x] Fix post page
 - [ ] Add post title
 - [ ] Add code styling
 - [ ] Add contact page
 - [ ] Fix navigation links
+- [ ] Add pagination to tags
 - [ ] Change pagination styling
 
 ## Credits
 
+This template is inspired from works from the following people :
+
+- [Aftab Alam](https://github.com/one-aalam/astro-ink)
 - [Mykal Machon](https://github.com/MykalMachon/Mykal.Codes)
 - [Chris Bongers](https://github.com/rebelchris/astro-recipe-website)
 - [Nikin Nagewadia](https://github.com/nnagewad/static-personal-site)

@@ -3,6 +3,8 @@ title: "Some articles are just so long they deserve a really long title to see i
 slug: "some-articles-are-just-so-long-they-deserve-a-really-long-title-to-see-if-things-will-break-well"
 date: 2020-04-25
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce bibendum neque eget nunc mattis eu sollicitudin enim tincidunt. Vestibulum lacus tortor, ultricies id dignissim ac, bibendum in velit. Proin convallis mi ac felis pharetra"
+tags:
+  - writing
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce bibendum neque eget nunc mattis eu sollicitudin enim tincidunt. Vestibulum lacus tortor, ultricies id dignissim ac, bibendum in velit. Proin convallis mi ac felis pharetra

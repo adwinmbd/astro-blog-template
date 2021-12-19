@@ -12,8 +12,8 @@ export interface Props {
 const { page } = Astro.props;
 ---
 <div class="page-actions">
-    {page.url.prev && <a class="action-gotox" href={page.url.prev} title="Go to Previous">&larr; Prev</a>}
-    {page.url.next && <a class="action-gotox" href={page.url.next} title="Go to Next">Next &rarr;</a>}
+    {page.url.prev && <a class="font-size-1" href={page.url.prev} title="Go to Previous">&larr; Prev</a>}
+    {page.url.next && <a class="font-size-1" href={page.url.next} title="Go to Next">Next &rarr;</a>}
 </div>
 <style>
     .page-actions {
@@ -23,9 +23,9 @@ const { page } = Astro.props;
         padding-top: 1.5rem;
         padding-bottom: 1.5rem;
     }
-    .action-gotox {
-        font-size: 1rem;
-        line-height: 1.5rem;
-        text-transform: uppercase;
-    }
+    /* .action-gotox {
+        font-size: 1.3rem;
+        line-height: 1.3rem;
+        font-weight: bold;
+    } */
 </style>

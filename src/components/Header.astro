@@ -1,15 +1,56 @@
+---
+const pages = {
+	home: {
+		url: '/',
+		title: 'Home'
+	},
+	about: {
+		url: '/about',
+		title: 'About'
+	},
+	blog: {
+		url: '/blog/all',
+		title: 'Blog'
+	},
+	tags: {
+		url: '/tags',
+		title: 'Tags'
+	}
+};
+
+const requestPathname = Astro.request.url.pathname;
+
+---
 <a class="skip-link wrapper" href="#main-content">Skip to content</a>
 <header role="banner" class="wrapper flex-container">
-    <a href="/" aria-label="Nikin Nagewadia - home" class="site-head-brand">
-        <img loading="eager" src="/code.svg" alt="A 3D emoji of Nikin Nagewadia." height="80" width="80">
+    <a href="/" aria-label="Astromnl - home" class="site-head-brand">
+        <img loading="eager" src="/code.svg" alt="Astromnl logo." height="80" width="80">
     </a>
 
     <nav class="site-navigation" aria-label="Primary">
         <ul class="nav-list">
-            <li><a href="/" aria-current="page">Home</a></li>
-            <li><a href="/about">About</a></li>
-             <li><a href="/blog/all">Blog</a></li>
-            <li><a href="/tags">Tags</a></li>
+            {Object.values(pages).map(entry => {
+                const className = requestPathname === entry.url && 'active';
+                return (
+                    <li>
+                        <a class={className} href={entry.url}>{entry.title}</a>
+                    </li>
+                )
+            })}
         </ul>
     </nav>
 </header>
+
+<style>
+
+a {
+	border-bottom: 2px solid transparent;
+}
+
+a.active {
+	border-bottom-color: var(--color-active);
+    color: var(--color-active);
+    text-underline-offset: var(--nav-underline-offset);
+    text-decoration-thickness: 20%;
+}
+</style>

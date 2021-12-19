@@ -489,170 +489,6 @@ section {
   color: var(--color-button-text);
 }
 
-/************** justice.gov.uk design system **********************/
-@media (min-width: 48.0625em) {
-  .moj-pagination {
-    margin-left: -5px;
-    margin-right: -5px;
-    font-size: 0;
-    text-align: justify;
-  }
-  .moj-pagination:after {
-    content: "";
-    display: inline-block;
-    width: 100%;
-  }
-  .moj-pagination__list {
-    display: inline-block;
-    margin-bottom: 0;
-    vertical-align: middle;
-  }
-  .moj-pagination__results {
-    display: inline-block;
-    margin-bottom: 0;
-    vertical-align: middle;
-  }
-}
-
-.moj-pagination__list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.moj-pagination__results {
-  font-weight: 400;
-  font-size: 16px;
-  font-size: 1rem;
-  line-height: 1.25;
-  margin-top: 0;
-}
-
-@media (min-width: 40.0625em) {
-  .moj-pagination__results {
-    font-size: 19px;
-    font-size: 1.1875rem;
-    line-height: 1.31579;
-  }
-  .moj-pagination__item {
-    font-size: 19px;
-    font-size: 1.1875rem;
-    line-height: 1.31579;
-  }
-}
-
-@media print {
-  .moj-pagination__results {
-    font-size: 14pt;
-    line-height: 1.15;
-  }
-}
-
-.moj-pagination__item {
-  font-weight: 400;
-  font-size: 16px;
-  font-size: 1rem;
-  line-height: 1.25;
-  display: inline-block;
-}
-
-@media print {
-  .moj-pagination__item {
-    font-size: 14pt;
-    line-height: 1.15;
-  }
-}
-
-.moj-pagination__item--active,
-.moj-pagination__item--dots {
-  font-weight: bold;
-  height: 25px;
-  padding: 5px 10px;
-  text-align: center;
-}
-
-.moj-pagination__item--dots {
-  padding-left: 0;
-  padding-right: 0;
-}
-
-.moj-pagination__item--prev .moj-pagination__link:before,
-.moj-pagination__item--next .moj-pagination__link:after {
-  display: inline-block;
-  height: 10px;
-  width: 10px;
-  border-style: solid;
-  color: #0b0c0c;
-  background: transparent;
-  -webkit-transform: rotate(-45deg);
-  -ms-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-  content: "";
-}
-
-.moj-pagination__item--prev .moj-pagination__link:before {
-  border-width: 3px 0 0 3px;
-  margin-right: 5px;
-}
-
-.moj-pagination__item--next .moj-pagination__link:after {
-  border-width: 0 3px 3px 0;
-  margin-left: 5px;
-}
-
-.moj-pagination__link {
-  display: block;
-  padding: 5px;
-  text-align: center;
-  text-decoration: none;
-  min-width: 25px;
-}
-
-.moj-pagination__link:focus {
-  outline: 3px solid transparent;
-  color: #0b0c0c;
-  background-color: #fd0;
-  box-shadow: 0 -2px #fd0, 0 4px #0b0c0c;
-  text-decoration: none;
-}
-
-.moj-pagination__link:link {
-  color: #1d70b8;
-}
-
-.moj-pagination__link:visited {
-  color: #4c2c92;
-}
-
-.moj-pagination__link:hover {
-  color: #003078;
-}
-
-.moj-pagination__link:active {
-  color: #0b0c0c;
-}
-
-.moj-pagination__link:focus {
-  color: #0b0c0c;
-}
-
-.moj-pagination__link:link,
-.moj-pagination__link:visited {
-  color: #1d70b8;
-}
-
-.moj-pagination__link:hover {
-  color: #5694ca;
-}
-
-.moj-pagination__link:focus {
-  color: #0b0c0c;
-}
-
-.moj-pagination__results {
-  padding: 5px;
-}
-
 /***************** Gov.uk Design Sytem ********************/
 .govuk-visually-hidden {
   position: absolute !important;
@@ -755,4 +591,235 @@ section {
 .govuk-tag--green {
   color: #005a30;
   background: #cce2d8;
+}
+
+/***************** Markdown styling ********************/
+pre,
+code {
+  color: #d4d4d4;
+  font-size: 14px;
+  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+  line-height: 1.5;
+  direction: ltr;
+  white-space: pre;
+  text-align: left;
+  text-shadow: none;
+  word-break: normal;
+  word-spacing: normal;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+pre::selection,
+code::selection {
+  text-shadow: none;
+  background: #b3d4fc;
+}
+
+@media print {
+  pre,
+  code {
+    text-shadow: none;
+  }
+}
+
+pre {
+  margin: 0.5rem 0 16px;
+  padding: 0.8rem 1rem 0.9rem;
+  overflow: auto;
+  background: #282a36;
+  border-radius: 4px;
+}
+
+:not(pre) > code {
+  padding: 0.1em 0.3em;
+  color: #db4c69;
+  background: #f9f2f4;
+  border-radius: 0.3em;
+  white-space: pre-wrap;
+}
+
+/*********************************************************
+* Tokens
+*/
+.namespace {
+  opacity: 0.7;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #6a9955;
+}
+
+.token.punctuation {
+  color: #d4d4d4;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: #b5cea8;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: #ce9178;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  color: #d4d4d4;
+  background: #2d3748;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: #c586c0;
+}
+
+.token.function {
+  color: #dcdcaa;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+  color: #d16969;
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+.token.constant {
+  color: #9cdcfe;
+}
+
+.token.class-name {
+  color: #4ec9b0;
+}
+
+.token.parameter {
+  color: #9cdcfe;
+}
+
+.token.interpolation {
+  color: #9cdcfe;
+}
+
+.token.punctuation.interpolation-punctuation {
+  color: #569cd6;
+}
+
+.token.boolean {
+  color: #569cd6;
+}
+
+.token.property {
+  color: #9cdcfe;
+}
+
+.token.selector {
+  color: #d7ba7d;
+}
+
+.token.tag {
+  color: #569cd6;
+}
+
+.token.attr-name {
+  color: #9cdcfe;
+}
+
+.token.attr-value {
+  color: #ce9178;
+}
+
+.token.entity {
+  color: #4ec9b0;
+  cursor: unset;
+}
+
+.token.namespace {
+  color: #4ec9b0;
+}
+
+/*********************************************************
+* Language Specific
+*/
+pre[class*="language-javascript"],
+code[class*="language-javascript"] {
+  color: #4ec9b0;
+}
+
+pre[class*="language-css"],
+code[class*="language-css"] {
+  color: #ce9178;
+}
+
+pre[class*="language-html"],
+code[class*="language-html"] {
+  color: #d4d4d4;
+}
+
+.language-html .token.punctuation {
+  color: #808080;
+}
+
+/*********************************************************
+* Line highlighting
+*/
+pre[data-line] {
+  position: relative;
+}
+
+pre > code {
+  position: relative;
+  z-index: 1;
+}
+
+.line-highlight {
+  position: absolute;
+  right: 0;
+  left: 0;
+  z-index: 0;
+  margin-top: 1em;
+  padding: inherit 0;
+  line-height: inherit;
+  white-space: pre;
+  background: #f7ebc6;
+  box-shadow: inset 5px 0 0 #f7d87c;
+  pointer-events: none;
+}
+
+pre[class*="language-bash"] .token.function {
+  color: #d4d4d4;
+}
+
+.token.comment {
+  color: #fff7;
 }

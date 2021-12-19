@@ -18,5 +18,6 @@ const content = Astro.props;
 ---
 
 <BlogPost content={content}>
+  <h1>{content.title}</h1>
   {content.astro.html}
 </BlogPost>

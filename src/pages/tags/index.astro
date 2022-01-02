@@ -12,7 +12,7 @@ const tags = [...new Set([].concat.apply([], allPosts.map(post => post.tags)))]
     <h1 class="font-size-3">All Tags</h1>
     <ul class="tag-list">
      {tags.map((tag) => (
-        <li><a class="govuk-tag--blue" href={`/tags/${tag}`} title={`View posts tagged under "${tag}"`}>{tag}</a></li>
+        <li><a class="govuk-tag--blue" href={`/tags/${tag}`} title={`View posts tagged under "${tag}"`}>#{tag}</a></li>
     ))}
     </ul>
   <!-- <p><i>page 1 of 1 (I don't have pagination yet 🤷🏻‍♂️)</i></p> -->

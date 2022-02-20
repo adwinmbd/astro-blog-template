@@ -1,12 +1,12 @@
 ---
 // Layout Import
-import MainLayout from '../../../layouts/MainLayout.astro'
+import MainLayout from '../../layouts/MainLayout.astro'
 // Component Imports
-import PostList from '../../../components/PostList.astro'
-import Pagination from '../../../components/Pagination.astro'
+import PostList from '../../components/PostList.astro'
+import Pagination from '../../components/Pagination.astro'
 
 export async function getStaticPaths({ }) {
-  const allPosts = Astro.fetchContent('../../../posts/*.md');
+  const allPosts = Astro.fetchContent('../../posts/*.md');
   const allTags = new Set()
   allPosts.map(post => {
       post.tags && post.tags.map(tag => allTags.add(tag.toLowerCase()))

@@ -1,0 +1,210 @@
+---
+// Layout Import
+import MainLayout from '../layouts/MainLayout.astro'
+// Component Imports
+// import PostList from '../components/PostList.astro'
+
+// Data Fetching: fetch recent posts
+/*
+let allPosts = Astro.fetchContent('../posts/*.md');
+allPosts = allPosts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+const recentPosts = allPosts.slice(0, 3)
+*/
+---
+<MainLayout title="Contact" description={`Hey! This is the Contact page.`}>
+    <h1 class="font-size-3 title-spacing">Contact</h1>
+    <!-- <fieldset class="govuk-fieldset"> -->
+    <form action="#">
+    <fieldset class="govuk-fieldset">
+    <!-- <legend class="govuk-fieldset__legend govuk-fieldset__legend--l"></legend> -->
+    <legend class="govuk-fieldset__legend">
+        <h2 class="font-size-1">
+        What is your message?
+        </h2>
+    </legend>
+
+    <div class="govuk-form-group">
+        <label class="govuk-label" for="name">
+        Name
+        </label>
+        <input class="govuk-input govuk-!-width-two-thirds" name="name" type="text">
+    </div>
+
+    <div class="govuk-form-group">
+        <label class="govuk-label" for="email">
+        E-mail
+        </label>
+        <input class="govuk-input govuk-!-width-two-thirds" name="email" type="email">
+    </div>
+
+    <div class="govuk-form-group">
+        <label class="govuk-label" for="message">
+        Message
+        </label>
+        <textarea class="govuk-textarea" name="message" rows="5" aria-describedby="message"></textarea>
+    </div>
+
+    <button class="govuk-button" data-module="govuk-button">
+        Send message
+    </button>
+
+    </fieldset>
+    </form>
+</MainLayout>
+
+<style>
+    .govuk-form-group {
+        margin-bottom: 20px
+    }
+
+    .govuk-form-group:after {
+        content: "";
+        display: block;
+        clear: both
+    }
+
+    @media (min-width:40.0625em) {
+        .govuk-form-group {
+            margin-bottom: 30px
+        }
+    }
+
+    .govuk-fieldset {
+        min-width: 0;
+        margin: 0;
+        padding: 0;
+        border: 0
+    }
+
+    .govuk-fieldset:after {
+        content: "";
+        display: block;
+        clear: both
+    }
+
+    .govuk-fieldset__legend {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-weight: 400;
+        font-size: 16px;
+        font-size: 1rem;
+        line-height: 1.25;
+        color: #0b0c0c;
+        box-sizing: border-box;
+        display: table;
+        max-width: 100%;
+        margin-bottom: 10px;
+        padding: 0;
+        white-space: normal
+    }
+
+    .govuk-label {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-weight: 400;
+        font-size: 16px;
+        font-size: 1rem;
+        line-height: 1.25;
+        color: #0b0c0c;
+        display: block;
+        margin-bottom: 5px
+    }
+
+    .govuk-input {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-weight: 400;
+        font-size: 16px;
+        font-size: 1rem;
+        line-height: 1.25;
+        box-sizing: border-box;
+        width: 100%;
+        height: 40px;
+        height: 2.5rem;
+        margin-top: 0;
+        padding: 5px;
+        border: 2px solid #0b0c0c;
+        border-radius: 0;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none
+    }
+
+	.govuk-\!-width-two-thirds {
+		width: 66.66%!important
+	}
+
+    .govuk-textarea {
+        font-family: GDS Transport, arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-weight: 400;
+        font-size: 16px;
+        font-size: 1rem;
+        line-height: 1.25;
+        box-sizing: border-box;
+        display: block;
+        width: 100%;
+        min-height: 40px;
+        margin-bottom: 20px;
+        padding: 5px;
+        resize: vertical;
+        border: 2px solid #0b0c0c;
+        border-radius: 0;
+        -webkit-appearance: none
+    }
+
+    .govuk-button {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-weight: 400;
+        font-size: 16px;
+        font-size: 1rem;
+        line-height: 1.1875;
+        box-sizing: border-box;
+        display: inline-block;
+        position: relative;
+        margin: 0 0 22px;
+        padding: 8px 10px 7px;
+        border: 2px solid rgba(0, 0, 0, 0);
+        border-radius: 0;
+        color: #fff;
+        background-color:#155389;
+        box-shadow: 0 2px 0 #002d18;
+        text-align: center;
+        vertical-align: top;
+        cursor: pointer;
+        -webkit-appearance: none
+    }
+
+
+.govuk-button:active,
+.govuk-button:hover,
+.govuk-button:link,
+.govuk-button:visited {
+	color: #fff;
+	text-decoration: none
+}
+
+.govuk-button:hover {
+	background-color: #0c3455;
+}
+
+.govuk-button:active {
+	top: 2px
+}
+
+.govuk-button:focus {
+	border-color: #fd0;
+	outline: 3px solid rgba(0, 0, 0, 0);
+	box-shadow: inset 0 0 0 1px #fd0
+}
+
+.govuk-button:focus:not(:active):not(:hover) {
+	border-color: #fd0;
+	color: #0b0c0c;
+	background-color: #fd0;
+	box-shadow: 0 2px 0 #0b0c0c
+}
+
+</style>

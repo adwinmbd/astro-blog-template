@@ -29,14 +29,17 @@ Inside of your Astro project, you'll see the following folders and files:
 │   │    └── BlogPost.astro
 │   │    └── MainLayout.astro
 │   ├── pages/
-│       └── about.astro
+│       └── tags.astro
+│       └── index.astro
 │       └── index.astro
 │       └── contact.astro
+│       ├── tags/
+|       |   └── [tag].astro
 │       ├── blog/
+|           └── [slug]/
+|           |   └── index.astro
 |           └── [all]/
 |               └── [...page].astro
-|           └── [slug]/
-|               └── index.astro
 └── package.json
 ```
 
@@ -68,7 +71,7 @@ Feel free to check [Astro documentation](https://github.com/snowpackjs/astro) or
 - [x] Fix post page
 - [x] Add post title
 - [x] Add code styling
-- [ ] Add contact page
+- [x] Add contact page
 - [x] Fix navigation links
 - [ ] Add pagination to tags
 - [x] Change pagination styling

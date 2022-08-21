@@ -2,41 +2,28 @@
 const { post } = Astro.props;
 
 function formatDate(date) {
-  return new Date(date).toUTCString().replace(/(\d\d\d\d) .*/, '$1'); // remove everything after YYYY
+  return new Date(date).toUTCString().replace(/(\d\d\d\d) .*/, "$1"); // remove everything after YYYY
 }
 ---
 
 <article>
-    <!-- <a class="font-size-1" href={`/posts/${post.slug}`}>
+  <!-- <a class="font-size-1" href={`/posts/${post.slug}`}>
         <h2>{post.title}</h2>
     </a> -->
-    <h3 class="font-size-1">
-      <a href={`/blog/${post.slug}`}>{post.title}</a>
-    </h3>
-    <div class="meta-information">
-        <p>
-            <!-- {post.description}&nbsp;<a class="read-more" href={`/posts/${post.slug}`}>Read →</a> -->
-            {post.description}
-        </p>
-        <p>
-          <span>Published in</span> 
-          <time class="capitalize" datetime={post.date}>{formatDate(post.date)}</time>
-        <!-- <div class="tags">
-            <span>Article topics:</span>
-            <ul class="list-horizontal">
-                <li class="capitalize">web design</li>
-                <li class="capitalize">design</li>
-                <li class="capitalize">information architecture</li>
-            </ul>
-        </div> -->
-        </p>
-    </div>
+  <h3 class="font-size-1">
+    <!-- <a href={`/blog/${post.slug}`}>{post.title}</a> -->
+    <a href={`/post/${post.slug}`}>{post.title}</a>
+  </h3>
+  <div class="meta-information">
+    <p>
+      <!-- {post.description}&nbsp;<a class="read-more" href={`/posts/${post.slug}`}>Read →</a> -->
+      {post.description}
+    </p>
+    <p>
+      <span>Published in</span>
+      <time class="capitalize" datetime={post.date}
+        >{formatDate(post.date)}
+      </time>
+    </p>
+  </div>
 </article>
-
-<!-- 
-<style lang="scss">
-  article{
-    margin: 0px 0px 1em 0px;
-  }
-</style>
--->

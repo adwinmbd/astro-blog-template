@@ -1,0 +1,37 @@
+---
+// Layout Import
+import MainLayout from "../../layouts/MainLayout.astro";
+// Component Imports
+import PostList from "../../components/PostList.astro";
+import Pagination from "../../components/Pagination.astro";
+
+// const PAGE_SIZE = 3;
+// const allPosts = Astro.fetchContent('../../posts/*.md');
+// const allSortedPosts = allPosts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
+export async function getStaticPaths({ paginate }) {
+    const PAGE_SIZE = 2;
+    const allPosts = Astro.fetchContent("../../data/*.md");
+    const allSortedPosts = allPosts.sort(
+        (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+    );
+
+    return paginate(allSortedPosts, {
+        pageSize: PAGE_SIZE,
+    });
+}
+
+const { slug } = Astro.request.params;
+const content = Astro.props;
+const { page } = Astro.props;
+//console.log(Astro.props)
+---
+
+<MainLayout
+    title="Home"
+    description={`Hey! This is Astromnl a simple Astro blog template.`}
+>
+    <h1 class="font-size-3">All Posts</h1>
+    <PostList posts={page.data} />
+    <Pagination page={page} />
+</MainLayout>

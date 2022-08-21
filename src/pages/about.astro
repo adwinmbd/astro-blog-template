@@ -1,65 +1,91 @@
 ---
 // Layout Import
-import MainLayout from '../layouts/MainLayout.astro'
-// Component Imports
-// import PostList from '../components/PostList.astro'
-
-// Data Fetching: fetch recent posts
-/*
-let allPosts = Astro.fetchContent('../posts/*.md');
-allPosts = allPosts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-const recentPosts = allPosts.slice(0, 3)
-*/
+import MainLayout from "../layouts/MainLayout.astro";
 ---
+
 <MainLayout title="About" description={`Hey! This is the About page.`}>
-        <h1 class="font-size-3 title-spacing">About</h1>
-        <section>
-            <h2 class="font-size-2">Short bio</h2>
-            <div class="bio">
-                <p>
-                    Dictum varius duis at consectetur lorem. Mauris a diam maecenas sed. Eleifend mi in nulla posuere sollicitudin aliquam. Eu non diam phasellus vestibulum. Cursus in hac habitasse platea. Arcu cursus vitae congue mauris rhoncus aenean.
-                </p>
-                <p>
-                    Porttitor lacus luctus accumsan tortor posuere ac ut consequat semper. Risus viverra adipiscing at in tellus integer feugiat scelerisque. Nulla pharetra diam sit amet nisl. Justo nec ultrices dui sapien eget mi proin sed.
-                </p>
-                <p>
-                    Sed lectus vestibulum mattis ullamcorper velit sed ullamcorper morbi. Diam sit amet nisl suscipit adipiscing bibendum est. 
-                </p>
-            </div>
-        </section>
-        <section>
-            <h2 class="font-size-2">Work</h2>
-            <ul class="list-extra-spaced">
-                <li>
-                    <h3 class="font-size-1">Nulla pharetra</h3>
-                    <div class="meta-information">
-                        <p><span class="visually-hidden">Based in</span> <span class="capitalize">Kyoto, Japan</span>
-                        </p>
-                        <p><span class="visually-hidden">From</span> <time datetime="2014-09"
-                                class="capitalize">January 20xx</time> <span class="visually-hidden">to</span> <time
-                                datetime="2014-11" class="dash capitalize">November 20xx</time></p>
-                    </div>
-                </li>
-                <li>
-                    <h3 class="font-size-1">Risus viverray</h3>
-                    <div class="meta-information">
-                        <p><span class="visually-hidden">Based in</span> <span class="capitalize">Campinas, Brazil</span>
-                        </p>
-                        <p><span class="visually-hidden">From</span> <time datetime="2011-09"
-                                class="capitalize">July 20xx</time> <span class="visually-hidden">to</span> <time
-                                datetime="2013-06" class="dash capitalize">December 20xx</time></p>
-                    </div>
-                </li>
-                <li>
-                    <h3 class="font-size-1">Lectus urna duis</h3>
-                    <div class="meta-information">
-                        <p><span class="visually-hidden">Based in</span> <span class="capitalize">Havana, Cuba</span>
-                        </p>
-                        <p><span class="visually-hidden">From</span> <time datetime="2003-09"
-                                class="capitalize">September 20xx</time> <span class="visually-hidden">to</span> <time
-                                datetime="2007-04" class="dash capitalize">April 20xx</time></p>
-                    </div>
-                </li>
-            </ul>
-        </section>
+    <h1 class="font-size-3 title-spacing">About</h1>
+    <section>
+        <h2 class="font-size-2">Short bio</h2>
+        <div class="bio">
+            <p>
+                Dictum varius duis at consectetur lorem. Mauris a diam maecenas
+                sed. Eleifend mi in nulla posuere sollicitudin aliquam. Eu non
+                diam phasellus vestibulum. Cursus in hac habitasse platea. Arcu
+                cursus vitae congue mauris rhoncus aenean.
+            </p>
+            <p>
+                Porttitor lacus luctus accumsan tortor posuere ac ut consequat
+                semper. Risus viverra adipiscing at in tellus integer feugiat
+                scelerisque. Nulla pharetra diam sit amet nisl. Justo nec
+                ultrices dui sapien eget mi proin sed.
+            </p>
+            <p>
+                Sed lectus vestibulum mattis ullamcorper velit sed ullamcorper
+                morbi. Diam sit amet nisl suscipit adipiscing bibendum est.
+            </p>
+        </div>
+    </section>
+    <section>
+        <h2 class="font-size-2">Work</h2>
+        <ul class="list-extra-spaced">
+            <li>
+                <h3 class="font-size-1">Nulla pharetra</h3>
+                <div class="meta-information">
+                    <p>
+                        <span class="visually-hidden">Based in</span>
+                        <span class="capitalize">Kyoto, Japan</span>
+                    </p>
+                    <p>
+                        <span class="visually-hidden">From</span>
+                        <time datetime="2014-09" class="capitalize"
+                            >January 20xx
+                        </time>
+                        <span class="visually-hidden">to</span>
+                        <time datetime="2014-11" class="dash capitalize"
+                            >November 20xx
+                        </time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <h3 class="font-size-1">Risus viverray</h3>
+                <div class="meta-information">
+                    <p>
+                        <span class="visually-hidden">Based in</span>
+                        <span class="capitalize">Campinas, Brazil</span>
+                    </p>
+                    <p>
+                        <span class="visually-hidden">From</span>
+                        <time datetime="2011-09" class="capitalize"
+                            >July 20xx
+                        </time>
+                        <span class="visually-hidden">to</span>
+                        <time datetime="2013-06" class="dash capitalize"
+                            >December 20xx
+                        </time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <h3 class="font-size-1">Lectus urna duis</h3>
+                <div class="meta-information">
+                    <p>
+                        <span class="visually-hidden">Based in</span>
+                        <span class="capitalize">Havana, Cuba</span>
+                    </p>
+                    <p>
+                        <span class="visually-hidden">From</span>
+                        <time datetime="2003-09" class="capitalize"
+                            >September 20xx
+                        </time>
+                        <span class="visually-hidden">to</span>
+                        <time datetime="2007-04" class="dash capitalize"
+                            >April 20xx
+                        </time>
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </section>
 </MainLayout>

@@ -83,5 +83,4 @@ This template is inspired from works the following people :
 - [Aftab Alam](https://github.com/one-aalam/astro-ink)
 - [Andrew Hudson](https://github.com/bigandy/astro-blog)
 - [Mykal Machon](https://github.com/MykalMachon/Mykal.Codes)
-- [Chris Bongers](https://github.com/rebelchris/astro-recipe-website)
 - [Nikin Nagewadia](https://github.com/nnagewad/static-personal-site)

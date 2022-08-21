@@ -7,9 +7,11 @@ import Pagination from "../../components/Pagination.astro";
 
 export async function getStaticPaths({ paginate }) {
     const PAGE_SIZE = 2;
-    const allPosts = await Astro.fetchContent("../../data/*.md");
+    const allPosts = await Astro.glob("../../data/*.md");
     const allSortedPosts = allPosts.sort(
-        (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+        (a, b) =>
+            new Date(b.frontmatter.date).valueOf() -
+            new Date(a.frontmatter.date).valueOf()
     );
 
     return paginate(allSortedPosts, {
@@ -17,10 +19,7 @@ export async function getStaticPaths({ paginate }) {
     });
 }
 
-const { slug } = Astro.request.params;
-const content = Astro.props;
 const { page } = Astro.props;
-//console.log(Astro.props)
 ---
 
 <MainLayout

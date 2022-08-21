@@ -29,17 +29,17 @@ Inside of your Astro project, you'll see the following folders and files:
 │   │    └── BlogPost.astro
 │   │    └── MainLayout.astro
 │   ├── pages/
-│       └── tags.astro
-│       └── index.astro
-│       └── index.astro
+│       └── about.astro
 │       └── contact.astro
+│       └── index.astro
+│       └── tags.astro
+│       ├── blog/
+|       |   └── [...page].astro
+│       ├── post/
+|       |   └── [slug].astro
 │       ├── tags/
 |       |   └── [tag].astro
-│       ├── blog/
-|           └── [slug]/
-|           |   └── index.astro
-|           └── [all]/
-|               └── [...page].astro
+|       |   └── [index].astro
 └── package.json
 ```
 

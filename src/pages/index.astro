@@ -5,9 +5,11 @@ import MainLayout from "../layouts/MainLayout.astro";
 import PostList from "../components/PostList.astro";
 
 // Data Fetching: fetch recent posts
-let allPosts = await Astro.fetchContent("../data/*.md");
+let allPosts = await Astro.glob("../data/*.md");
 allPosts = allPosts.sort(
-  (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+  (a, b) =>
+    new Date(b.frontmatter.date).valueOf() -
+    new Date(a.frontmatter.date).valueOf()
 );
 const recentPosts = allPosts.slice(0, 3);
 ---

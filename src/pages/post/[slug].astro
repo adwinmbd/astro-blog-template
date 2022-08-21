@@ -1,25 +1,30 @@
 ---
-import BlogPost from "../../layouts/BlogPost.astro";
+// import BlogPost from "../../layouts/BlogPost.astro";
+import MainLayout from "../../layouts/MainLayout.astro";
 
 export async function getStaticPaths() {
-    let allPosts = await Astro.fetchContent("../../data/*.md");
+    let allPosts = await Astro.glob("../../data/*.md");
     let allSortedPosts = allPosts.sort(
-        (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+        (a, b) =>
+            new Date(b.frontmatter.date).valueOf() -
+            new Date(a.frontmatter.date).valueOf()
     );
 
     return allSortedPosts.map((post) => {
         return {
-            params: { slug: post.slug },
+            params: { slug: post.frontmatter.slug },
             props: { ...post },
         };
     });
 }
 
-const { slug } = Astro.request.params;
-const content = Astro.props;
+// const content = Astro.props;
+const { Content, frontmatter } = Astro.props;
+const title = frontmatter.title;
+const description = "Astromnl blog post about " + frontmatter.title;
 ---
 
-<BlogPost content={content}>
-    <h1>{content.title}</h1>
-    {content.astro.html}
-</BlogPost>
+<MainLayout title={title} description={description}>
+    <h1>{title}</h1>
+    <Content />
+</MainLayout>

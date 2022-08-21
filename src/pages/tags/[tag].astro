@@ -6,14 +6,17 @@ import PostList from "../../components/PostList.astro";
 // import Pagination from '../../components/Pagination.astro'
 
 export async function getStaticPaths() {
-  const allPosts = await Astro.fetchContent("../../data/*.md");
+  const allPosts = await Astro.glob("../../data/*.md");
   const allTags = new Set();
   allPosts.map((post) => {
-    post.tags && post.tags.map((tag) => allTags.add(tag.toLowerCase()));
+    post.frontmatter.tags &&
+      post.frontmatter.tags.map((tag) => allTags.add(tag.toLowerCase()));
   });
 
   return Array.from(allTags).map((tag) => {
-    const filteredPosts = allPosts.filter((post) => post.tags.includes(tag));
+    const filteredPosts = allPosts.filter((post) =>
+      post.frontmatter.tags.includes(tag)
+    );
     return {
       params: { tag },
       props: {
@@ -24,7 +27,7 @@ export async function getStaticPaths() {
 }
 
 const { page } = Astro.props;
-const { tag } = Astro.request.params;
+const { tag } = Astro.params;
 let title = `Posts by Tag: ${tag}`;
 let description = `all of the articles we've posted and linked so far under the tag: "${tag}"`;
 ---

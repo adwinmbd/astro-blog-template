@@ -1,0 +1,60 @@
+---
+// Layout Import
+import MainLayout from "../../layouts/MainLayout.astro";
+
+let title = "All tags";
+let description = "All the tags used so far...";
+
+// Data Fetching: List all Markdown posts in the repo.
+const allPosts = await Astro.glob("../../data/*.md");
+const tags = [
+    ...new Set(
+        [].concat.apply(
+            [],
+            allPosts.map((post) => post.frontmatter.tags)
+        )
+    ),
+];
+---
+
+<MainLayout title={title} description={description}>
+    <h1 class="font-size-3">All Tags</h1>
+    <ul class="tag-list">
+        {
+            tags.map((tag) => (
+                <li>
+                    <a
+                        class="govuk-tag--blue"
+                        href={`/tags/${tag}`}
+                        title={`View posts tagged under "${tag}"`}
+                    >
+                        #{tag}
+                    </a>
+                </li>
+            ))
+        }
+    </ul>
+    <!-- <p><i>page 1 of 1 (I don't have pagination yet 🤷🏻‍♂️)</i></p> -->
+</MainLayout>
+
+<style>
+    .tag-list {
+        display: flex;
+        list-style-type: none;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+    /*
+    .tag {
+      display: inline-block;
+      border-radius: 9999px;
+      --tw-bg-opacity: 1;
+      background-color: rgba(216,180,254,var(--tw-bg-opacity));
+      padding: 0.25rem 1rem;
+      font-size: 1.25rem;
+      line-height: 1.75rem;
+      --tw-text-opacity: 1;
+      color: rgba(126,34,206,var(--tw-text-opacity));
+    }
+    */
+</style>

@@ -5,13 +5,9 @@ import MainLayout from "../../layouts/MainLayout.astro";
 import PostList from "../../components/PostList.astro";
 import Pagination from "../../components/Pagination.astro";
 
-// const PAGE_SIZE = 3;
-// const allPosts = Astro.fetchContent('../../posts/*.md');
-// const allSortedPosts = allPosts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-
 export async function getStaticPaths({ paginate }) {
     const PAGE_SIZE = 2;
-    const allPosts = Astro.fetchContent("../../data/*.md");
+    const allPosts = await Astro.fetchContent("../../data/*.md");
     const allSortedPosts = allPosts.sort(
         (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
     );

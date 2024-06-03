@@ -38,5 +38,5 @@ jobs:
         uses: denoland/deployctl@v1
         with:
           project: "adwin-astro-blogtpl"
-          entrypoint: "server/entry.mjs"
+          entrypoint: "https://deno.land/std/http/file_server.ts"
           root: "dist"
